@@ -1,0 +1,9 @@
+version: '3'
+services:
+    web:
+        build: .
+        image: tgalske/weatherd
+        container_name: weatherd-endpoint
+        ports:
+            - "8080:8080"
+        
