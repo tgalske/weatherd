@@ -9,6 +9,7 @@ https://www.wunderground.com/weather/api/
 2. Build the .jar file: `mvn clean package`
 
 3.Build the Docker image and start a container: `docker-compose up`
+
      - To start the container in detached mode: `docker-compose up -d`
      
 4. http://localhost:8080/api/weather/{zip}
