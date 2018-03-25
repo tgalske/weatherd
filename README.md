@@ -1,5 +1,5 @@
 # weatherd
-Returns the temperate in a city when given a zip code.
+Returns the temperature in a city when given a zip code.
 
 https://www.wunderground.com/weather/api/
 
