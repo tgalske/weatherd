@@ -16,7 +16,7 @@ public class WeatherEndpoint {
     WeatherHandler handler = new WeatherHandler(zip);
     handler.setKey();
     handler.makeUrl();
-    String response = handler.prettyPrint(handler.makeRequest());
+    String response = handler.parseJson(handler.makeRequest());
     return Response.ok(response).build();
   }
 

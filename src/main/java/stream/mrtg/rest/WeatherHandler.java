@@ -16,6 +16,9 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /**
  * @author Tyler
@@ -67,6 +70,20 @@ public class WeatherHandler {
       result.append(line);
     }
     return result.toString();
+  }
+
+  String parseJson(String json) throws ParseException {
+    JSONParser parser = new JSONParser();
+    JSONObject main = (JSONObject) parser.parse(json);
+    JSONObject current_observation = (JSONObject) main.get("current_observation");
+    JSONObject display_location = (JSONObject) current_observation.get("display_location");
+    
+    String city = (String) display_location.get("city");
+    String state = (String) display_location.get("state");
+    double temperature = (double) current_observation.get("temp_f");
+    
+    String response = Math.round(temperature) + " F in " + city + ", " + state;
+    return response;
   }
 
   String prettyPrint(String uglyJson) {
