@@ -1,5 +1,5 @@
 # weatherd
-Returns the current weather in Json format when given a zip code.
+Returns the temperate in a city when given a zip code.
 
 https://www.wunderground.com/weather/api/
 
